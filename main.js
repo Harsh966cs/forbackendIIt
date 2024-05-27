@@ -7,7 +7,7 @@ const connection = require('./dbConfig'); // Corrected spelling from 'conection'
 const jwt = require('jsonwebtoken');
 const auth = require('./auth')
 app.use(bodyParser.json());
-const port = process.env.PORT || 1000;
+const port = process.env.PORT || 3000;
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -50,7 +50,8 @@ app.post('/register', async (req, res) => {
 
     // Hash the password
    
-  } catch (error) {
+  } 
+  catch (error) {
     res.status(500).send({
       message: "Error creating user",
       error
